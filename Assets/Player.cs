@@ -83,11 +83,11 @@ public class Player : MonoBehaviour {
 
     void OnGUI()
     {
-        string text = this.go ? "Stop" : "Go";
+        //string text = this.go ? "Stop" : "Go";
 
-        // Fixed Layout
-        if (GUI.Button(new Rect(Screen.width - 50 , Screen.height - 25, 40, 20), text)) {
-            this.go = !this.go;
-        }
+        //// Fixed Layout
+        //if (GUI.Button(new Rect(Screen.width - 50 , Screen.height - 25, 40, 20), text)) {
+        //    this.go = !this.go;
+        //}
     }
 }
