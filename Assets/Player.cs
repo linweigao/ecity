@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
     private bool go = false;
+    private bool back = false;
     private bool turnRight = false;
     private bool turnLeft = false;
 
@@ -36,6 +37,15 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.UpArrow)) {
             this.go = false;
         }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            this.back = true;
+        }
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            this.back = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.RightArrow)) {
             this.turnRight = true;
         }
@@ -63,6 +73,10 @@ public class Player : MonoBehaviour {
 
         if (this.go) {
             player.transform.Translate(0, 0, 0.1f);
+        }
+        else if(this.back) // go over write the back
+        {
+            player.transform.Translate(0, 0, -0.1f);
         }
 
 	}
