@@ -52,7 +52,7 @@ public class Building : MonoBehaviour {
 	private void RenderStoreWindow(int windowID)
     {
         this.RenderEbayItems();
-        if (GUI.Button(new Rect(Screen.width - 80, Screen.height - 30, 50, 20), "Close"))
+        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 100, 100, 50), "Close"))
         {
             this.showModal = false;
         }
