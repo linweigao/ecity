@@ -16,13 +16,12 @@ public class Building : MonoBehaviour {
             "https://i.ebayimg.com/images/g/I4oAAOSwe~ha~Oak/s-l500.jpg",
         }));
 
-        items.Add(10, new Item(10, "https://www.ebay.com/itm/SEA-RAY-SUNDANCER-300-2005-Trailer-not-incluided/113035852653?hash=item1a51763b6d:g:J~8AAOSwgTJbAaJi",
+        items.Add(10, new Item(10, "https://www.ebay.com/itm/Crownline-Speedboat-with-Cuddy/163078140247",
                                new string[] {
-            "https://i.ebayimg.com/images/g/J~8AAOSwgTJbAaJi/s-l500.jpg",
-            "https://i.ebayimg.com/images/g/SLgAAOSwA4BbAaJl/s-l500.jpg",
-            "https://i.ebayimg.com/images/g/jNcAAOSwEARbAaJv/s-l500.jpg",
-            "https://i.ebayimg.com/images/g/EjEAAOSwrCZbAaJz/s-l500.jpg",
-            "https://i.ebayimg.com/images/g/QwIAAOSwuyNbAaJ1/s-l500.jpg"
+            "https://i.ebayimg.com/images/g/CoIAAOSw48dbEuc1/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/zlsAAOSwYK1bEuc2/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/uQAAAOSwirFbEuc3/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/FTMAAOSwdhlbEuc7/s-l400.jpg"
         }));
     }
     public int itemId;
