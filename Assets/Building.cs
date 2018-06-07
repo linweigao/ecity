@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class Building : MonoBehaviour {
 
-    private bool showModal = false;
+    static Dictionary<int, Item> items;
 
-    private List<Texture2D> images;
+    static Building() {
+        items = new Dictionary<int, Item>();
+        items.Add(1, new Item(1, "https://www.ebay.com/p/ASUS-90pd02e1-m00750-AMD-Quad-Core-Ryzen-7-1700gry-G11dfdbr7gtx107/2165326262?iid=142811454515",
+                              new string[] {
+            "https://i.ebayimg.com/images/g/O6kAAOSw7Bda~Oak/s-l1600.jpg",
+            "https://i.ebayimg.com/images/g/97QAAOSw7bla~Oak/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/3gUAAOSwXrBa~Oak/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/I4oAAOSwe~ha~Oak/s-l500.jpg",
+        }));
+    }
+    public int itemId;
+    private Item item;
+
+    private bool showModal = false;
 
 	// Use this for initialization
 	void Start () {
-        images = new List<Texture2D>();
+        this.item = items[this.itemId];
 	}
 	
 	// Update is called once per frame
@@ -21,12 +34,12 @@ public class Building : MonoBehaviour {
     IEnumerator OnMouseUp()
     {
         this.showModal = true;
-        if (this.images.Count == 0)
+        if (this.item.Textures.Count == 0)
         {
-            yield return this.LoadImage("https://i.ebayimg.com/images/g/O6kAAOSw7Bda~Oak/s-l1600.jpg");
-            yield return this.LoadImage("https://i.ebayimg.com/images/g/97QAAOSw7bla~Oak/s-l500.jpg");
-            yield return this.LoadImage("https://i.ebayimg.com/images/g/3gUAAOSwXrBa~Oak/s-l500.jpg");
-            yield return this.LoadImage("https://i.ebayimg.com/images/g/I4oAAOSwe~ha~Oak/s-l500.jpg");
+            foreach (var imageUrl in this.item.ImageUrls)
+            {
+                yield return this.LoadImage(imageUrl);
+            }
         }
     }
 
@@ -44,7 +57,7 @@ public class Building : MonoBehaviour {
         {
             yield return www;
             Debug.Log(url + " request done");
-            this.images.Add(www.texture);
+            this.item.Textures.Add(www.texture);
         }
     }
 
@@ -63,10 +76,10 @@ public class Building : MonoBehaviour {
         float x = 30f;
         float y = 20f;
 
-        for (int i = 0; i < this.images.Count; i++)
+        for (int i = 0; i < this.item.Textures.Count; i++)
         {
-            var texture = this.images[i];
-            GUI.DrawTexture(new Rect(x, y, 370, 320), texture);
+            var texture = this.item.Textures[i];
+            GUI.Button(new Rect(x, y, 370, 320), texture);
 
 
             x += 400;
@@ -75,6 +88,34 @@ public class Building : MonoBehaviour {
                 x = 30f;
                 y += 330;
             }
+        }
+    }
+}
+
+public class Item
+{
+    private int itemId;
+    private string[] imageUrls;
+    private string itemUrl;
+
+            public Item(int itemId, string itemUrl, string[] imageUrls)
+    {
+        this.itemId = itemId;
+        this.imageUrls = imageUrls;
+        this.itemUrl = itemUrl;
+        this.Textures = new List<Texture2D>();
+    }
+
+    public List<Texture2D> Textures
+    {
+        get;
+        private set;
+    }
+
+    public string[] ImageUrls 
+    {
+        get {
+            return this.imageUrls;
         }
     }
 }
