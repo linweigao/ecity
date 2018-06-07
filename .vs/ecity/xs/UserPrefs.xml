@@ -1,17 +1,16 @@
 ﻿<Properties StartupConfiguration="{DFC8509D-30EA-E297-C9B2-CC00152BD66E}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Building.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Game.cs">
     <Files>
-      <File FileName="Assets/Building.cs" Line="14" Column="3" />
-      <File FileName="Assets/Player.cs" Line="33" Column="9" />
-      <File FileName="Assets/Game.cs" Line="11" Column="11" />
+      <File FileName="Assets/Building.cs" Line="26" Column="40" />
+      <File FileName="Assets/Player.cs" Line="89" Column="73" />
+      <File FileName="Assets/Game.cs" Line="18" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ligao/Desktop/ebay/ecity/Assets/Player.cs" relfile="Assets/Player.cs" line="20" column="1" />
-      <Breakpoint file="/Users/ligao/Desktop/ebay/ecity/Assets/Building.cs" relfile="Assets/Building.cs" line="17" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
