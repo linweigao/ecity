@@ -4,7 +4,7 @@ PlayerPath?
 SceneListBegin?
 Assets/PolygonCity/Scenes/Demo.unity
 SceneListEnd?
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Building
+69ac210b3b2eb34b23f1406bbc1e6fbf Assembly-CSharp.dll:.Building
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
