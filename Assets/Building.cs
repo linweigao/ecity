@@ -8,12 +8,20 @@ public class Building : MonoBehaviour {
 
     static Building() {
         items = new Dictionary<int, Item>();
-        items.Add(1, new Item(1, "https://www.ebay.com/p/ASUS-90pd02e1-m00750-AMD-Quad-Core-Ryzen-7-1700gry-G11dfdbr7gtx107/2165326262?iid=142811454515",
+        items.Add(1, new Item(1, "https://www.ebay.com/ulk/p/ASUS-90pd02e1-m00750-AMD-Quad-Core-Ryzen-7-1700gry-G11dfdbr7gtx107/2165326262?iid=142811454515",
                               new string[] {
             "https://i.ebayimg.com/images/g/O6kAAOSw7Bda~Oak/s-l1600.jpg",
             "https://i.ebayimg.com/images/g/97QAAOSw7bla~Oak/s-l500.jpg",
             "https://i.ebayimg.com/images/g/3gUAAOSwXrBa~Oak/s-l500.jpg",
             "https://i.ebayimg.com/images/g/I4oAAOSwe~ha~Oak/s-l500.jpg",
+        }));
+
+        items.Add(10, new Item(10, "https://www.ebay.com/itm/Crownline-Speedboat-with-Cuddy/163078140247",
+                               new string[] {
+            "https://i.ebayimg.com/images/g/CoIAAOSw48dbEuc1/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/zlsAAOSwYK1bEuc2/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/uQAAAOSwirFbEuc3/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/FTMAAOSwdhlbEuc7/s-l400.jpg"
         }));
     }
     public int itemId;
@@ -79,7 +87,9 @@ public class Building : MonoBehaviour {
         for (int i = 0; i < this.item.Textures.Count; i++)
         {
             var texture = this.item.Textures[i];
-            GUI.Button(new Rect(x, y, 370, 320), texture);
+            if (GUI.Button(new Rect(x, y, 370, 320), texture)) {
+                Application.OpenURL(this.item.ItemUrl);
+            }
 
 
             x += 400;
@@ -104,6 +114,14 @@ public class Item
         this.imageUrls = imageUrls;
         this.itemUrl = itemUrl;
         this.Textures = new List<Texture2D>();
+    }
+
+    public string ItemUrl 
+    {
+        get 
+        {
+            return this.itemUrl;  
+        }
     }
 
     public List<Texture2D> Textures
