@@ -6,7 +6,7 @@ public class Game : MonoBehaviour {
 
     private string[] names = new string[] { "Max", "John", "Micheal", "Kenny", "Sarah" };
     private int stayCount = 0;
-    private int random;
+    private string friendName;
 
 
     void OnGUI()
@@ -14,8 +14,8 @@ public class Game : MonoBehaviour {
         // Random display people login
         if (this.stayCount > 0) 
         {
-            string message = string.Format("{0}{1} has just joined eCity.", names[this.random], (int)(Random.value * 1000));
-            GUI.Label(new Rect(Screen.width - 300, 0, 300, 100), message);
+            string message = string.Format("{0} has just joined eCity.", this.friendName);
+            GUI.Label(new Rect(Screen.width - 500, 10, 500, 100), message);
             this.stayCount--;
         }
         else 
@@ -23,7 +23,7 @@ public class Game : MonoBehaviour {
             var random = (int)(Random.value * 100);
             if (random < 5)
             {
-                this.random = random;
+                this.friendName = names[random] + (int)(Random.value * 1000);
                 this.stayCount = 100;
             }
         }
