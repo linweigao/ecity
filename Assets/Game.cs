@@ -14,8 +14,8 @@ public class Game : MonoBehaviour {
         // Random display people login
         if (this.stayCount > 0) 
         {
-            string message = string.Format("{0} has just joined eCity.", names[this.random]);
-            GUI.Label(new Rect(Screen.width - 200, 0, 300, 20), message);
+            string message = string.Format("{0}{1} has just joined eCity.", names[this.random], (int)(Random.value * 1000));
+            GUI.Label(new Rect(Screen.width - 300, 0, 300, 100), message);
             this.stayCount--;
         }
         else 
