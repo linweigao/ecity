@@ -21,11 +21,11 @@ public class Player : MonoBehaviour {
             var touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Stationary) 
             {
-                if (touch.position.x < 100) 
+                if (touch.position.x < 150 && touch.position.y < 150) 
                 {
                     this.turnLeft = true;
                 }
-                else if (touch.position.x > Screen.width - 100)
+                else if (touch.position.x > Screen.width - 150 && touch.position.y < 150)
                 {
                     this.turnRight = true;
                 }
@@ -75,19 +75,19 @@ public class Player : MonoBehaviour {
         }
 
         if (this.turnRight) {
-            player.transform.Rotate(0, 1f, 0);
+            player.transform.Rotate(0, 1.5f, 0);
         }
         else if (this.turnLeft)
         {
-            player.transform.Rotate(0, -1f, 0);
+            player.transform.Rotate(0, -1.5f, 0);
         }
 
         if (this.go) {
-            player.transform.Translate(0, 0, 0.1f);
+            player.transform.Translate(0, 0, 0.2f);
         }
         else if(this.back) // go over write the back
         {
-            player.transform.Translate(0, 0, -0.1f);
+            player.transform.Translate(0, 0, -0.2f);
         }
 
 	}

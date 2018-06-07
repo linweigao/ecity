@@ -18,7 +18,7 @@ public class Building : MonoBehaviour {
 		
 	}
 
-    IEnumerator OnMouseDown()
+    IEnumerator OnMouseUp()
     {
         this.showModal = true;
         if (this.images.Count == 0)
