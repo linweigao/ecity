@@ -27,13 +27,7 @@ public class Game : MonoBehaviour {
                 this.stayCount = 300;
             }
         }
-
-        if (GUI.Button(new Rect(Screen.width - 300, 100, 200, 50), "Mark sent you a voice message"))
-        {
-            AudioSource audio = GetComponent<AudioSource>();
-            audio.Play();
-        }
-}
+    }
 
 	// Use this for initialization
 	void Start () {

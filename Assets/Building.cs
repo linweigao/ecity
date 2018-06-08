@@ -16,6 +16,20 @@ public class Building : MonoBehaviour {
             "https://i.ebayimg.com/images/g/I4oAAOSwe~ha~Oak/s-l500.jpg",
         }));
 
+
+        items.Add(2, new Item(2, "https://www.ebay.com/itm/NEW-Apple-2017-iPad-9-7-Retina-Display-128GB-A9-Wifi-Touch-ID/292504593948?epid=235057941",
+                      new string[] {
+            "https://i.ebayimg.com/images/g/7Y4AAOSwdcZa9EAc/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/inEAAOSwvGlajgac/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/D~4AAOSwsW9Y2Ibc/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/xIAAAOSwYtla0LK4/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/BDEAAOSwUlxaKFZY/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/ybsAAOSwldRaKFZU/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/cc4AAOSw6WNax6lj/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/1EgAAOSwdoVZhccI/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/iBQAAOSwr7tZhccK/s-l400.jpg"
+        }));
+
         items.Add(10, new Item(10, "https://www.ebay.com/itm/Crownline-Speedboat-with-Cuddy/163078140247",
                                new string[] {
             "https://i.ebayimg.com/images/g/CoIAAOSw48dbEuc1/s-l400.jpg",
@@ -23,7 +37,19 @@ public class Building : MonoBehaviour {
             "https://i.ebayimg.com/images/g/uQAAAOSwirFbEuc3/s-l400.jpg",
             "https://i.ebayimg.com/images/g/FTMAAOSwdhlbEuc7/s-l400.jpg"
         }));
+
+        items.Add(20, new Item(20, "https://www.ebay.com/sch/i.html?_from=R40&_nkw=tesla&_sacat=0&_fosrp=1",
+                               new string[] {
+            "https://i.ebayimg.com/images/g/FaYAAOSwshJa-G-7/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/Ut8AAOSwi4pa-G-8/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/SMUAAOSwPGpbBZ6I/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/K2kAAOSwrptbBZ6L/s-l500.jpg",
+            "https://i.ebayimg.com/images/g/YJMAAOSwQb1bGWhc/s-l400.jpg",
+            "https://i.ebayimg.com/images/g/tFYAAOSwjyhaCRji/s-l500.jpg"
+        }));
     }
+
+
     public int itemId;
     private Item item;
 
