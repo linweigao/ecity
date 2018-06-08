@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5de8aedcf4248b1bb895452f09e6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 10
+  baseValue: 230
   mytext: {fileID: 114290799804751596}
   player: {fileID: 0}
   refreshInterval: 1
