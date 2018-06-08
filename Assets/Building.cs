@@ -99,7 +99,7 @@ public class Building : MonoBehaviour {
 	private void RenderStoreWindow(int windowID)
     {
         this.RenderEbayItems();
-        if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 100, 100, 50), "Close"))
+        if (GUI.Button(new Rect(Screen.width - 100, Screen.height - 200, 80, 50), "Close"))
         {
             this.showModal = false;
         }
@@ -113,16 +113,16 @@ public class Building : MonoBehaviour {
         for (int i = 0; i < this.item.Textures.Count; i++)
         {
             var texture = this.item.Textures[i];
-            if (GUI.Button(new Rect(x, y, 370, 320), texture)) {
+            if (GUI.Button(new Rect(x, y, 570, 520), texture)) {
                 Application.OpenURL(this.item.ItemUrl);
             }
 
 
-            x += 400;
-            if (x + 400 > Screen.width) 
+            x += 600;
+            if (x + 600 > Screen.width) 
             {
                 x = 30f;
-                y += 330;
+                y += 530;
             }
         }
     }
