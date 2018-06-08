@@ -23,8 +23,8 @@ public class TextUpdate : MonoBehaviour
         }
         else
         {
-            mytext.text = "5000+";
-            mytext.color = new Color(0.5377f, 0.0684f, 0.0684f, 1);
+            mytext.text = "Apple";
+            mytext.color = Color.white;
             mytext.transform.rotation = player.transform.rotation;
         }
     }
