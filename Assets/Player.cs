@@ -16,19 +16,31 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         var player = this.gameObject;
-        if (Input.touchCount > 0) {
-            // Always reset indicator if there is a new touch.
-            this.go = false;
-            this.turnRight = false;
-            this.turnLeft = false;
-
+        if (Input.touchCount > 0) 
+        {
             var touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began) {
-                if (touch.position.x < 50) {
-                    // Turn right
+            if (touch.phase == TouchPhase.Stationary) 
+            {
+                if (touch.position.x < 150 && touch.position.y < 150) 
+                {
+                    this.turnLeft = true;
+                }
+                else if (touch.position.x > Screen.width - 150 && touch.position.y < 150)
+                {
                     this.turnRight = true;
                 }
-}
+                else
+                {
+                    this.go = true;
+                }
+
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                this.turnRight = false;
+                this.turnLeft = false;
+                this.go = false;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow)) {
@@ -62,21 +74,20 @@ public class Player : MonoBehaviour {
             this.turnLeft = false;
         }
 
-        if(this.turnRight) {
-            player.transform.Rotate(0, 1f, 0);
+        if (this.turnRight) {
+            player.transform.Rotate(0, 1.5f, 0);
         }
-
-        if (this.turnLeft)
+        else if (this.turnLeft)
         {
-            player.transform.Rotate(0, -1f, 0);
+            player.transform.Rotate(0, -1.5f, 0);
         }
 
         if (this.go) {
-            player.transform.Translate(0, 0, 0.1f);
+            player.transform.Translate(0, 0, 0.2f);
         }
         else if(this.back) // go over write the back
         {
-            player.transform.Translate(0, 0, -0.1f);
+            player.transform.Translate(0, 0, -0.2f);
         }
 
 	}
